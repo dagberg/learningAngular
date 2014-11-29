@@ -18,6 +18,15 @@
 		};
 	});
 
+	app.controller("ReviewController", function(){
+		this.review = {};
+
+		this.addReview =  function(product) {
+			product.reviews.push(this.review);
+			this.review = {};
+		};
+	});
+
 	var gems = [
 		{
 			name: 'Dodecahedron',
@@ -27,7 +36,23 @@
 			image: 'Knucklehead crackers.jpg',
 			description: 'Dodecahedron is a twelve-sided motherfucker.',
 			specifications: 'It takes twelve sides to be a Dodecahedron.',
-			review: 'Dodecahedrons are the tits.',
+			reviews: [
+				{
+					stars: 5,
+					body: 'Dodecahedrons are the tits.',
+					author: "joe@thomas.com"
+				},
+				{
+					stars: 1,
+					body: 'Dodecahedrons are fucking bullshit, bro.',
+					author: "jack@thomas.com"
+				},
+				{
+					stars: 3.5,
+					body: "try out this shit, it's legit",
+					author: "helmet@hotmail.com"
+				}
+			]
 		},
 		{
 			name: 'Pentagonal Gem',
